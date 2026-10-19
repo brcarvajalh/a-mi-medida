@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#5949ee">
+<meta name="description" content="A Mi Medida: descubre moda que se adapta a tu cuerpo, estilo y presupuesto. Prototipo universitario.">
+<title>A Mi Medida | Moda que se adapta a ti</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root{--violet:#5949ee;--purple:#8250ee;--ink:#1c1c38;--muted:#6f7185;--soft:#f7f6fd;--pink:#ed719c;--border:#e8e7f2;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--soft);color:var(--ink);font:15px/1.5 'DM Sans',Arial,sans-serif}h1,h2,h3,.brand{font-family:'Plus Jakarta Sans',sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a39bff;outline-offset:2px}
+.topbar{background:white;box-shadow:0 2px 20px #19183b0b;position:sticky;top:0;z-index:8}.header{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;white-space:nowrap}.mark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:var(--violet);color:white}.mark svg{width:27px}.nav{display:flex;align-items:center;gap:5px}.nav button{background:transparent;border:0;border-radius:11px;padding:10px 13px;color:#52526b;font-weight:700}.nav button.active,.nav button:hover{color:var(--violet);background:#f0edff}.shell{max-width:1180px;margin:0 auto;padding:28px 20px 50px}.hero{background:linear-gradient(115deg,#fff 0%,#f1edff 60%,#f9e6f0 100%);border:1px solid #ebe6fa;border-radius:27px;padding:42px;display:grid;grid-template-columns:1.4fr .8fr;align-items:center;gap:24px;overflow:hidden}.eyebrow{text-transform:uppercase;letter-spacing:1.8px;font-size:11px;font-weight:800;color:var(--violet)}h1{font-size:clamp(30px,4vw,50px);line-height:1.14;letter-spacing:-1.7px;margin:12px 0 15px}h1 span{color:var(--violet)}.hero p{max-width:560px;color:#525269;font-size:16px;margin:0 0 24px}.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:800;background:var(--violet);color:white;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn:hover{background:#4436d0}.btn-light{background:white;color:var(--violet);border:1px solid #cfcafb}.btn-light:hover{background:#f5f2ff}.hero-graphic{display:flex;justify-content:center}.hero-graphic svg{width:min(100%,280px);filter:drop-shadow(0 14px 22px #4730b926)}.note{font-size:12px;color:#7a7790;margin:14px 0 0}.section-head{margin:31px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}.section-head h2{font-size:23px;margin:0}.section-head p{margin:3px 0;color:var(--muted)}.pill{border-radius:999px;background:#f0edff;color:#5545c7;font-size:12px;font-weight:800;padding:6px 11px;white-space:nowrap}.toolbar{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:12px;background:white;border:1px solid var(--border);padding:16px;border-radius:18px;margin:16px 0}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:12px;font-weight:800;color:#595972}input,select{border:1px solid #dcdbe8;border-radius:10px;padding:12px;width:100%;color:var(--ink);background:white;min-width:0}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{border:1px solid var(--border);background:white;border-radius:19px;overflow:hidden;box-shadow:0 7px 22px #17173506}.art{height:220px;background:var(--shade);display:grid;place-items:center;position:relative;overflow:hidden}.art:before,.art:after{content:"";position:absolute;border-radius:50%;background:#fff8;width:210px;height:210px;top:-85px;right:-77px}.art:after{width:160px;height:160px;top:auto;right:auto;bottom:-100px;left:-35px;background:#ffffff70}.garment{position:relative;z-index:1;filter:drop-shadow(0 9px 10px #0002);font-size:90px;line-height:1}.fav{position:absolute;z-index:2;right:13px;top:13px;border:0;border-radius:50%;width:40px;height:40px;font-size:22px;color:#9693a8;background:#fff;display:grid;place-items:center}.fav.on{color:#e3538c}.card-body{padding:16px}.brandname{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:var(--muted)}.card h3{margin:5px 0 4px;font-size:16px}.meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:9px 0}.price{font-size:17px;font-weight:800}.tag{display:inline-flex;align-items:center;border-radius:6px;background:#f4f1ff;color:#6656cf;font-size:11px;padding:4px 7px}.card p{color:#737187;font-size:13px;margin:10px 0}.details-btn{width:100%;border:1px solid #dedafa;background:white;color:var(--violet);font-weight:800;padding:9px;border-radius:10px}.details-btn:hover{background:#f5f2ff}.empty{text-align:center;background:white;border:1px dashed #ccc7e8;border-radius:16px;padding:50px 20px}.empty h3{margin:8px 0}.empty p{color:var(--muted)}.panel{max-width:770px;background:white;border:1px solid var(--border);border-radius:20px;padding:28px}.panel p{color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.form-actions{display:flex;gap:10px;margin-top:23px;flex-wrap:wrap}.form-note{background:#f5f2ff;color:#5d5690;padding:14px;border-radius:11px;font-size:13px;margin:16px 0}.success{color:#24805a;font-weight:700}.hidden{display:none!important}footer{background:#201e39;color:#dddaec;padding:25px 20px;margin-top:38px;text-align:center;font-size:12px}.modal-overlay{position:fixed;inset:0;background:#16122aaf;z-index:10;display:grid;place-items:center;padding:16px}.modal{background:white;max-width:660px;width:100%;max-height:93vh;overflow:auto;border-radius:20px;padding:28px;position:relative}.modal-close{position:absolute;top:12px;right:14px;border:0;background:#f3f1fc;border-radius:50%;height:36px;width:36px;font-size:22px}.detail-top{display:grid;grid-template-columns:170px 1fr;gap:23px;align-items:center}.detail-art{border-radius:15px;min-height:200px;display:grid;place-items:center;font-size:88px;background:var(--shade)}.small{font-size:12px;color:var(--muted)}.sizes{border-collapse:collapse;width:100%;font-size:13px;margin:14px 0}.sizes td,.sizes th{border-bottom:1px solid var(--border);padding:8px;text-align:left}.sizes th{background:#f8f7fc}.notice{border-radius:10px;padding:12px 14px;background:#fff8e9;font-size:13px;color:#805e25}.sr{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}
+@media(max-width:900px){.toolbar{grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr .6fr;padding:30px}}@media(max-width:590px){.header{flex-wrap:wrap;padding:10px 14px}.brand{font-size:16px}.nav{width:100%;justify-content:space-between}.nav button{padding:8px;font-size:12px}.shell{padding:18px 13px 32px}.hero{grid-template-columns:1fr;padding:27px 24px}.hero-graphic{display:none}.toolbar{grid-template-columns:1fr 1fr;padding:11px;gap:9px}.toolbar .field:first-child{grid-column:1/-1}.cards{grid-template-columns:1fr 1fr;gap:10px}.art{height:155px}.garment{font-size:64px}.card-body{padding:12px}.card h3{font-size:14px}.price{font-size:14px}.tag{font-size:10px}.section-head h2{font-size:20px}.form-grid{grid-template-columns:1fr}.panel{padding:19px}.detail-top{grid-template-columns:1fr}.detail-art{min-height:160px}.modal{padding:20px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="header">
+<a class="brand" href="#" aria-label="A Mi Medida - inicio"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M29 17c-7-8 1-17 9-12 7 5 2 14-5 17l22 21c5 5 2 13-5 13H14c-7 0-10-8-5-13l20-20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 50c9-16 17-16 26 0" stroke="#f5b5d0" stroke-width="6" stroke-linecap="round"/></svg></span><span>A Mi Medida</span></a>
+<nav class="nav" aria-label="Navegación principal">
+<button data-page="home" class="active">Inicio</button><button data-page="catalog">Explorar</button><button data-page="favorites">Favoritos <span id="favcount"></span></button><button data-page="profile">Mi perfil</button>
+</nav></div></header>
+<main class="shell">
+<section id="home">
+<div class="hero"><div><div class="eyebrow">Moda inclusiva · Tu estilo, tus reglas</div><h1>La moda se adapta <span>a ti.</span></h1><p>Encuentra prendas según tu estilo, medidas y presupuesto. Porque vestir bien no debería depender de encontrar una talla estándar.</p><button class="btn" id="start">Descubrir mi estilo →</button><p class="note">Prototipo académico · Prendas y precios ficticios.</p></div>
+<div class="hero-graphic" aria-hidden="true"><svg viewBox="0 0 300 310" fill="none"><rect x="39" y="27" width="221" height="258" rx="41" fill="#c3b8fc"/><path d="M112 78l38-14 38 14 24 35-30 22-10-18v117h-44V117l-10 18-30-22 24-35z" fill="#5949ee"/><path d="M133 69c6 11 27 11 34 0" stroke="#eeeaff" stroke-width="9" stroke-linecap="round"/><path d="M90 175c16-4 33 3 40 14v60H65v-60c5-9 14-13 25-14z" fill="#f2acc5"/><path d="M219 151c-20-17-51-2-51 23v79h88v-79c0-12-13-22-37-23z" fill="#fff5ef"/><path d="M185 164l37 39 24-39" stroke="#ed719c" stroke-width="9"/><circle cx="215" cy="117" r="16" fill="#211c54"/><path d="M37 258h226" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></div></div>
+<div class="section-head"><div><h2>Diseñada para distintas formas de vestir</h2><p>Elige una prenda, personaliza tu perfil y consulta una sugerencia orientativa.</p></div><span class="pill">18 prendas de ejemplo</span></div>
+<div id="featured" class="cards"></div>
+</section>
+<section id="catalog" class="hidden">
+<div class="section-head"><div><h2>Explorar prendas</h2><p>Descubre opciones que encajan con lo que buscas.</p></div><span id="results" class="pill"></span></div>
+<div class="toolbar">
+<div class="field"><label for="q">Buscar prenda o marca</label><input id="q" placeholder="Ej.: blazer, camisa, urbano"></div>
+<div class="field"><label for="style">Estilo</label><select id="style"><option value="all">Todos</option><option>Formal</option><option>Casual</option><option>Urbano</option><option>Deportivo</option></select></div>
+<div class="field"><label for="type">Categoría</label><select id="type"><option value="all">Todas</option><option>Camisas</option><option>Pantalones</option><option>Chaquetas</option><option>Camisetas</option></select></div>
+<div class="field"><label for="budget">Presupuesto máximo</label><select id="budget"><option value="999999">Cualquier precio</option><option value="100000">$100.000</option><option value="200000">$200.000</option><option value="300000">$300.000</option><option value="500000">$500.000</option></select></div>
+</div><div id="products" class="cards"></div>
+</section>
+<section id="favorites" class="hidden"><div class="section-head"><div><h2>Mis favoritos</h2><p>Guarda y compara tus prendas preferidas.</p></div></div><div id="saved" class="cards"></div></section>
+<section id="profile" class="hidden">
+<div class="section-head"><div><h2>Mi perfil de estilo</h2><p>Solo completa los campos que te resulten útiles.</p></div></div>
+<form id="profileform" class="panel">
+<div class="form-note">Tus medidas se guardan únicamente en este navegador, no se envían a ningún servidor. Para un dispositivo compartido, evita usar datos personales reales.</div>
+<div class="form-grid">
+<div class="field"><label for="height">Estatura (cm)</label><input id="height" type="number" min="100" max="230" placeholder="Ej.: 175"></div>
+<div class="field"><label for="chest">Pecho (cm)</label><input id="chest" type="number" min="50" max="200" placeholder="Ej.: 110"></div>
+<div class="field"><label for="waist">Cintura (cm)</label><input id="waist" type="number" min="50" max="200" placeholder="Ej.: 100"></div>
+<div class="field"><label for="hips">Cadera (cm)</label><input id="hips" type="number" min="50" max="210" placeholder="Ej.: 112"></div>
+<div class="field"><label for="fit">Cómo prefieres que te quede la ropa</label><select id="fit"><option value="regular">Regular / cómodo</option><option value="loose">Holgado</option><option value="fitted">Más ajustado</option></select></div>
+<div class="field"><label for="preferred">Estilo preferido</label><select id="preferred"><option>Formal</option><option>Casual</option><option>Urbano</option><option>Deportivo</option></select></div>
+</div><div class="form-actions"><button type="submit" class="btn">Guardar perfil</button><button type="button" id="example" class="btn btn-light">Cargar ejemplo</button><button type="button" id="clear" class="btn btn-light">Borrar datos</button></div>
+<p id="profilemsg" class="small" aria-live="polite"></p></form>
+</section>
+</main>
+<footer><strong>A Mi Medida</strong> · Moda que se adapta a ti. Prototipo académico sin compras, tiendas reales ni garantía de ajuste.</footer>
+<div id="overlay" class="modal-overlay hidden" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="detailtitle"><button class="modal-close" id="close" aria-label="Cerrar">×</button><div id="detail"></div></div></div>
+<script>
+const catalog=[
+['1','Blazer estructurado','Línea Áurea','Chaquetas','Formal',299900,'🧥','#e9e1fc'],
+['2','Camisa de vestir','Norte Studio','Camisas','Formal',149900,'👔','#f3ecdf'],
+['3','Pantalón recto','Raíz Moda','Pantalones','Formal',189900,'👖','#e2e8f6'],
+['4','Chaqueta casual','Distrito Textil','Chaquetas','Casual',239900,'🧥','#f1e9df'],
+['5','Camiseta esencial','Raíz Moda','Camisetas','Casual',79900,'👕','#e4eff2'],
+['6','Jeans de corte relajado','Norte Studio','Pantalones','Casual',179900,'👖','#e6e3fa'],
+['7','Sobrecamisa urbana','Distrito Textil','Camisas','Urbano',169900,'🥼','#fde8eb'],
+['8','Pantalón cargo','Línea Áurea','Pantalones','Urbano',209900,'👖','#ede4d7'],
+['9','Camiseta gráfica','Norte Studio','Camisetas','Urbano',99900,'👕','#f6e2f1'],
+['10','Chaqueta deportiva','Raíz Moda','Chaquetas','Deportivo',199900,'🧥','#ddf0ef'],
+['11','Pantalón jogger','Distrito Textil','Pantalones','Deportivo',129900,'👖','#e7e9f2'],
+['12','Camiseta deportiva','Línea Áurea','Camisetas','Deportivo',89900,'👕','#e2f1de'],
+['13','Blazer de lino','Distrito Textil','Chaquetas','Formal',349900,'🧥','#f1e9e1'],
+['14','Camisa Oxford','Línea Áurea','Camisas','Casual',159900,'👔','#e4eaf5'],
+['15','Pantalón chino','Norte Studio','Pantalones','Casual',169900,'👖','#f2ebdc'],
+['16','Camisa oversize','Raíz Moda','Camisas','Urbano',139900,'👕','#ece2ef'],
+['17','Chaqueta cortavientos','Norte Studio','Chaquetas','Deportivo',249900,'🧥','#e4f3fa'],
+['18','Camiseta cuello alto','Distrito Textil','Camisetas','Formal',119900,'👕','#eee7f9']
+].map(([id,name,brand,category,style,price,emoji,shade])=>({id,name,brand,category,style,price,emoji,shade}));
+const charts={
+top:{S:[94,86],M:[102,94],L:[110,102],XL:[120,112],'2XL':[132,124],'3XL':[146,138]},
+bottom:{S:[80,98],M:[88,106],L:[98,116],XL:[108,126],'2XL':[120,138],'3XL':[134,152]}
+};
+const $=s=>document.querySelector(s);
+const money=v=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(v);
+const safeJSON=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))||fallback}catch(e){return fallback}};
+let profile=safeJSON('amm-profile',{}),favorites=safeJSON('amm-favorites',[]);
+const isBottom=p=>p.category==='Pantalones';
+function suggest(p){
+const bottom=isBottom(p),dims=bottom?['waist','hips']:['chest','waist'],values=dims.map(d=>Number(profile[d])||0);
+if(values.some(v=>!v))return 'Completa tus medidas para estimar una talla';
+const allowance=profile.fit==='loose'?8:profile.fit==='fitted'?0:4;
+const sizes=bottom?charts.bottom:charts.top;
+for(const [size,limit] of Object.entries(sizes))if(values.every((v,i)=>v+allowance<=limit[i]))return 'Talla orientativa: '+size;
+return 'Sin talla sugerida en el rango de demostración';
+}
+function card(p){
+const loved=favorites.includes(p.id);
+return '<article class="card"><div class="art" style="--shade:'+p.shade+'"><span class="garment" role="img" aria-label="'+p.category+'">'+p.emoji+'</span><button class="fav '+(loved?'on':'')+'" data-fav="'+p.id+'" aria-label="'+(loved?'Quitar de':'Agregar a')+' favoritos">'+(loved?'♥':'♡')+'</button></div><div class="card-body"><span class="brandname">'+p.brand+'</span><h3>'+p.name+'</h3><div class="meta"><span class="price">'+money(p.price)+'</span><span class="tag">'+p.style+'</span></div><p>'+suggest(p)+'</p><button class="details-btn" data-detail="'+p.id+'">Ver detalles y tallas</button></div></article>';
+}
+function empty(title,body){return '<div class="empty" style="grid-column:1/-1"><h3>'+title+'</h3><p>'+body+'</p></div>'}
+function draw(){
+$('#featured').innerHTML=catalog.slice(0,3).map(card).join('');
+const q=$('#q').value.toLowerCase().trim(),style=$('#style').value,type=$('#type').value,amount=Number($('#budget').value);
+const matched=catalog.filter(p=>(p.name+' '+p.brand+' '+p.style).toLowerCase().includes(q)&&(style==='all'||p.style===style)&&(type==='all'||p.category===type)&&p.price<=amount);
+$('#results').textContent=matched.length+' resultados';
+$('#products').innerHTML=matched.length?matched.map(card).join(''):empty('Sin resultados','Prueba otros filtros o aumenta el presupuesto.');
+const stored=catalog.filter(p=>favorites.includes(p.id));
+$('#saved').innerHTML=stored.length?stored.map(card).join(''):empty('Todavía no tienes favoritos','Explora el catálogo y presiona el corazón de una prenda.');
+$('#favcount').textContent=favorites.length?'('+favorites.length+')':'';
+}
+function page(view){
+document.querySelectorAll('main>section').forEach(x=>x.classList.toggle('hidden',x.id!==view));
+document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===view));
+window.scrollTo({top:0,behavior:'smooth'});draw();
+}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>page(b.dataset.page)));
+$('#start').addEventListener('click',()=>page('catalog'));
+['q','style','type','budget'].forEach(id=>$('#'+id).addEventListener(id==='q'?'input':'change',draw));
+document.body.addEventListener('click',e=>{
+let b=e.target.closest('[data-fav],[data-detail]');if(!b)return;
+if(b.dataset.fav){const id=b.dataset.fav;favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];localStorage.setItem('amm-favorites',JSON.stringify(favorites));draw();}
+if(b.dataset.detail)details(b.dataset.detail);
+});
+function details(id){
+const p=catalog.find(item=>item.id===id);if(!p)return;
+const bottom=isBottom(p),sizes=bottom?charts.bottom:charts.top,dims=bottom?['Cintura','Cadera']:['Pecho','Cintura'];
+$('#detail').innerHTML='<div class="detail-top"><div class="detail-art" style="--shade:'+p.shade+'">'+p.emoji+'</div><div><span class="brandname">'+p.brand+'</span><h2 id="detailtitle">'+p.name+'</h2><p>'+p.style+' · '+p.category+'</p><h3>'+money(p.price)+'</h3><span class="tag">'+suggest(p)+'</span></div></div><h3>Tabla de tallas ilustrativa (cm)</h3><p class="small">Medidas inventadas para explicar el algoritmo. No corresponden a ninguna marca real.</p><table class="sizes"><thead><tr><th>Talla</th><th>'+dims[0]+'</th><th>'+dims[1]+'</th></tr></thead><tbody>'+Object.entries(sizes).map(([s,v])=>'<tr><td>'+s+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td></tr>').join('')+'</tbody></table><p class="notice">La recomendación no asegura ajuste, comodidad ni disponibilidad. Este producto no está a la venta.</p><button class="btn btn-light" id="goto-profile">Actualizar mis medidas</button>';
+$('#overlay').classList.remove('hidden');$('#close').focus();
+$('#goto-profile').onclick=()=>{$('#overlay').classList.add('hidden');page('profile')};
+}
+$('#close').onclick=()=>$('#overlay').classList.add('hidden');
+$('#overlay').addEventListener('click',e=>{if(e.target.id==='overlay')$('#overlay').classList.add('hidden')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#overlay').classList.add('hidden')});
+const ids=['height','chest','waist','hips','fit','preferred'];
+function fill(){ids.forEach(id=>{if(profile[id]!==undefined)$('#'+id).value=profile[id]})}
+function save(){
+const result={};ids.forEach(id=>{const el=$('#'+id);result[id]=el.type==='number'?(el.value?Number(el.value):''):el.value});
+profile=result;localStorage.setItem('amm-profile',JSON.stringify(profile));$('#profilemsg').textContent='Perfil guardado en este navegador.';$('#profilemsg').className='success';draw();
+}
+$('#profileform').addEventListener('submit',e=>{e.preventDefault();save()});
+$('#example').onclick=()=>{profile={height:180,chest:110,waist:99,hips:113,fit:'regular',preferred:'Formal'};fill();save()};
+$('#clear').onclick=()=>{profile={};localStorage.removeItem('amm-profile');$('#profileform').reset();$('#profilemsg').textContent='Medidas eliminadas de este navegador.';draw()};
+fill();draw();
+</script>
+</body>
+</html>
