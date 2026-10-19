@@ -1,0 +1,33 @@
+{
+  "id": "./",
+  "name": "A Mi Medida · Moda para ti",
+  "short_name": "A Mi Medida",
+  "description": "Descubre prendas, looks y tallas orientativas para tu estilo. Prototipo académico de moda inclusiva.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8f7fb",
+  "theme_color": "#6756da",
+  "lang": "es-CO",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

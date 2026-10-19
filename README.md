@@ -1,43 +1,49 @@
-# A Mi Medida 🧥
+# A Mi Medida — PWA móvil
 
-**Moda que se adapta a ti.** Prototipo académico de una aplicación web inclusiva para descubrir prendas según medidas, estilo y presupuesto.
+**Moda que se adapta a ti.** Prototipo académico de descubrimiento de moda inclusiva, con experiencia de aplicación móvil instalable (PWA).
 
-## Abrir la aplicación
+## Abrir o instalar
 
-La primera versión está hecha en **HTML, CSS y JavaScript** dentro de `index.html`. No es necesario instalar Visual Studio Code, Node.js ni dependencias.
+**Demo (cuando GitHub Pages esté habilitado):** https://brcarvajalh.github.io/a-mi-medida/
 
-Para verla en línea, activa GitHub Pages:
-
-1. En este repositorio, abre **Settings** → **Pages**.
+1. En GitHub, visita **Settings → Pages**.
 2. En **Build and deployment**, elige **Deploy from a branch**.
-3. En **Branch**, selecciona **main** y **/(root)**. Pulsa **Save**.
-4. Espera a que termine la publicación. La dirección prevista es: **https://brcarvajalh.github.io/a-mi-medida/**.
+3. Selecciona la rama **main**, carpeta **/(root)** y pulsa **Save**.
+4. Cuando la página esté disponible, ábrela en el celular.
+5. **iPhone con Safari:** menú Compartir → **Añadir a pantalla de inicio** → Añadir.
+6. **Android con Chrome:** menú de tres puntos → **Instalar app** o **Añadir a pantalla de inicio**.
 
-También puedes descargar `index.html` y abrirlo localmente en un navegador moderno.
+No necesitas instalar Visual Studio Code ni compilar nada. Se trata de una PWA estática hecha con HTML, CSS y JavaScript. Sus archivos principales están en la raíz del repositorio.
 
-## Funciones incluidas (MVP)
+## Funcionalidades
 
-- Catálogo académico de prendas con marcas y precios **ficticios**.
-- Búsqueda y filtros de estilo, categoría y presupuesto.
-- Favoritos almacenados localmente en el navegador.
-- Perfil de medidas del usuario y preferencias de estilo.
-- Recomendaciones **orientativas** de talla, basadas en tablas **simuladas**.
-- Diseño adaptable a celulares y computadores.
+- **Inicio:** portada editorial de bienvenida, prendas destacadas, acceso al perfil.
+- **Explorar:** búsqueda, estilo (formal/casual/urbano/deportivo), categoría y presupuesto.
+- **Mis looks:** cuatro conjuntos de prendas y opción de guardarlos.
+- **Favoritos:** guardar y quitar productos.
+- **Perfil:** estatura, pecho, cintura, cadera, ajuste y estilo; guarda las medidas localmente.
+- **Tallas orientativas:** tablas simuladas para demostrar el algoritmo; no garantizan ajuste real.
+- **PWA:** manifiesto, íconos, navegación inferior, soporte para instalación y acceso básico sin conexión después de la primera visita.
 
-## Avisos importantes
+## Archivos
 
-No hay compras, pagos, inicio de sesión ni inventarios reales. Las sugerencias no garantizan ajuste. Las medidas se guardan únicamente en el navegador mediante `localStorage`, sin enviarlas a un servidor. No uses este prototipo para introducir información sensible en equipos compartidos.
+| Archivo | Función |
+|---|---|
+| `index.html` | Pantallas y estructura de la aplicación |
+| `styles.css` | Identidad visual adaptable al celular |
+| `app.js` | Catálogo, filtros, tallas, looks, favoritos y perfil |
+| `manifest.webmanifest` | Configuración de instalación en móvil |
+| `service-worker.js` | Almacenamiento temporal de archivos para uso sin conexión |
+| `icons/` | Íconos PNG de instalación |
 
-## Cómo editar desde GitHub
+## Privacidad y limitaciones
 
-Abre `index.html`, pulsa el ícono de lápiz **Edit this file**, modifica el contenido y selecciona **Commit changes**. Los cambios se reflejarán automáticamente en GitHub Pages cuando esté activado.
+La aplicación **no envía** tus medidas a servidores. Los datos locales se guardan con claves `amm-profile`, `amm-favorites` y `amm-looks` en localStorage; los datos de la versión web anterior se conservan al actualizar en el mismo navegador/origen. Si cambias de dispositivo o borras los datos del navegador, no se sincronizan.
 
-## Posibles siguientes pasos
+**Todas las marcas, prendas, precios y tablas de talla son de demostración.** No hay carrito de compra, pagos, cuentas de usuario ni catálogo de marcas reales. Los looks son ilustraciones de combinaciones, no prueba virtual de ropa sobre una persona. Algunas funciones PWA varían por navegador y sistema operativo.
 
-1. Organizar el código en módulos separados.
-2. Añadir guía de tallas real por marca con información autorizada.
-3. Implementar cuentas y una base de datos segura.
-4. Incorporar un sistema visual de conjuntos y variantes.
-5. Integrar catálogos y enlaces externos de marcas con permiso.
+## Desarrollo desde GitHub
 
-Creado como proyecto de aprendizaje y demostración.
+Puedes cambiar texto o estilo sin instalar editor: abre el archivo, pulsa el lápiz, edita y haz **Commit changes**. GitHub Pages publicará el cambio una vez que el despliegue termine.
+
+En producción, habría que investigar y obtener catálogos autorizados, protección de datos personales, políticas de privacidad y cálculos reales de tallaje por prenda.
