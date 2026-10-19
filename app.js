@@ -203,7 +203,7 @@ function closeSheetIfOpen(){if(!$('#sheet-overlay').hidden)closeSheet()}
 function initInstall(){
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('#install-action').hidden=false});
 $('#install-action').addEventListener('click',async()=>{if(!installPrompt){toast('Usa la opción de instalación del navegador');return}installPrompt.prompt();try{await installPrompt.userChoice}catch(_){}installPrompt=null;$('#install-action').hidden=true});
-if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone){$('#install-help').innerHTML='<b>¡Ya tienes la app instalada!</b> Abre A Mi Medida desde el ícono de tu celular.';$('#install-action').hidden=true}
+if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone){const b=$('#install-action');if(b)b.hidden=true;$('#install-help').innerHTML='<b>¡Ya tienes la app instalada!</b> Abre A Mi Medida desde el ícono de tu celular.';}
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}))}
 }
 initNavigation();fillForm();renderAll();route(location.hash.replace('#','')||'home',false);initInstall();
