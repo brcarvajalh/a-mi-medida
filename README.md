@@ -1,6 +1,6 @@
 # A Mi Medida — PWA móvil
 
-**Moda que se adapta a ti.** Prototipo académico de descubrimiento de moda inclusiva, con experiencia de aplicación móvil instalable (PWA).
+**Moda que se adapta a ti.** Prototipo de moda inclusiva, para la clase de análitica de negocios en la web (unisalle 2026).
 
 ## Abrir o instalar
 
