@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6a58c9">
+  <meta name="description" content="Avance académico de A Mi Medida: moda inclusiva, perfil de medidas y catálogo de demostración.">
+  <title>A Mi Medida | Avance universitario</title>
+  <style>
+    /* BLOQUE 1. Estilo visual: colores, tamaños y organización */
+    :root{--violeta:#6a58c9;--violeta-suave:#f0edfc;--texto:#2d2937;--gris:#746e7f;--borde:#e6e1eb;--fondo:#f8f7fb}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--fondo);color:var(--texto);font:16px/1.5 Arial,Helvetica,sans-serif}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a99fea;outline-offset:2px}
+    [hidden]{display:none!important}
+    .encabezado{background:white;border-bottom:1px solid var(--borde)}
+    .limite{max-width:940px;margin:auto;padding:0 20px}
+    .marca{display:flex;align-items:center;gap:10px;padding-top:22px;font-size:21px;font-weight:800;letter-spacing:-.5px}
+    .marca-icono{background:var(--violeta-suave);color:var(--violeta);border-radius:11px;width:42px;height:42px;display:grid;place-items:center;font-size:24px}
+    .submarca{color:var(--gris);font-size:13px;margin:3px 0 15px}
+    .navegacion{display:flex;gap:8px;padding-bottom:14px;flex-wrap:wrap}
+    .navegacion button{border:1px solid var(--borde);background:#fff;border-radius:9px;padding:9px 15px;color:#565061;font-weight:bold}
+    .navegacion button.activo{background:var(--violeta);color:white;border-color:var(--violeta)}
+    main{padding:28px 20px 50px!important}
+    h1{font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0 0 12px}
+    h2{font-size:22px;margin:0 0 10px}
+    h3{font-size:17px;margin:0 0 6px}
+    p{margin:0 0 14px}
+    .intro,.bloque,.tarjeta{background:white;border:1px solid var(--borde);border-radius:14px}
+    .intro{padding:28px;background:linear-gradient(125deg,#f2eeff,#fff)}
+    .etiqueta{display:inline-block;color:#5846ae;background:#e8e2ff;border-radius:7px;font-size:12px;font-weight:bold;padding:5px 10px;margin-bottom:15px}
+    .intro p{max-width:680px;color:#50495d}
+    .boton{background:var(--violeta);color:white;border:none;border-radius:9px;padding:11px 17px;font-weight:bold}
+    .boton.secundario{background:white;color:var(--violeta);border:1px solid #b9abf2}
+    .nota{color:var(--gris);font-size:13px;margin-top:15px}
+    .subtitulo{color:var(--gris)}
+    .pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+    .paso{background:white;border:1px solid var(--borde);border-radius:12px;padding:17px}
+    .numero{display:grid;place-items:center;background:var(--violeta-suave);color:var(--violeta);border-radius:50%;width:30px;height:30px;font-weight:bold;margin-bottom:10px}
+    .paso p{font-size:13px;color:var(--gris);margin:0}
+    .bloque{padding:24px}
+    .formulario{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .campo{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:bold}
+    .campo input,.campo select{border:1px solid #d6d0de;background:white;border-radius:8px;padding:10px;width:100%;min-width:0}
+    .acciones{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+    .aviso{padding:12px 14px;background:#f3f0fe;border-radius:8px;font-size:13px;color:#5b4d8f;margin-top:16px}
+    .mensaje{margin-top:12px;min-height:22px;color:#27765c;font-weight:bold;font-size:14px}
+    .filtros{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:18px 0}
+    .rejilla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .tarjeta{padding:15px;display:flex;gap:13px;align-items:flex-start}
+    .producto-emoji{border-radius:12px;background:#eeeafa;width:75px;height:82px;display:grid;place-items:center;font-size:42px;flex:none}
+    .tarjeta .categoria{font-size:12px;color:var(--gris)}
+    .tarjeta h3{margin:4px 0;font-size:16px}
+    .precio{font-weight:bold;margin:5px 0}
+    .talla{display:inline-block;margin-top:8px;color:#5846ae;background:#f0edfc;font-size:12px;padding:5px 7px;border-radius:5px}
+    .vacio{grid-column:1/-1;padding:26px;border:1px dashed #bbb0ce;background:white;border-radius:12px}
+    footer{font-size:12px;color:var(--gris);margin-top:25px;text-align:center}
+    @media(max-width:640px){.limite{padding-left:15px;padding-right:15px}.marca{padding-top:15px}.intro,.bloque{padding:19px}.pasos,.rejilla,.formulario,.filtros{grid-template-columns:1fr}.pasos{gap:9px}.tarjeta{padding:12px}.producto-emoji{width:65px;height:73px}}
+  </style>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="limite">
+      <div class="marca"><span class="marca-icono" aria-hidden="true">👕</span> A Mi Medida</div>
+      <p class="submarca">Moda inclusiva · Prototipo académico</p>
+      <nav class="navegacion" aria-label="Secciones del prototipo">
+        <button type="button" data-vista="inicio" class="activo" aria-current="page">Inicio</button>
+        <button type="button" data-vista="perfil">Mi perfil</button>
+        <button type="button" data-vista="explorar">Explorar prendas</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="limite">
+    <!-- BLOQUE 2. INICIO: Explicar el problema y la propuesta -->
+    <section id="inicio">
+      <div class="intro">
+        <span class="etiqueta">Primer avance del proyecto</span>
+        <h1>La moda debería adaptarse a ti.</h1>
+        <p>Comprar ropa por internet puede ser difícil cuando no sabemos qué talla elegir. A Mi Medida propone ayudar a las personas a descubrir prendas según sus medidas, su estilo y su presupuesto.</p>
+        <button type="button" class="boton" data-vista="perfil">Probar el prototipo →</button>
+        <p class="nota">Esta es una primera demostración; los productos y las tallas son ejemplos, no datos comerciales.</p>
+      </div>
+
+      <h2 style="margin-top:28px">¿Cómo funcionaría?</h2>
+      <div class="pasos">
+        <article class="paso"><span class="numero">1</span><h3>Registra tus medidas</h3><p>El usuario ingresa datos como pecho, cintura y cadera.</p></article>
+        <article class="paso"><span class="numero">2</span><h3>Explora prendas</h3><p>Busca productos de demostración y filtra por estilo.</p></article>
+        <article class="paso"><span class="numero">3</span><h3>Consulta tu talla</h3><p>La app compara medidas con una tabla ilustrativa.</p></article>
+      </div>
+      <div class="aviso"><strong>Lo que ya está hecho:</strong> pantalla de inicio, formulario que guarda datos en este navegador, catálogo de ejemplo y cálculo básico de talla. <strong>Lo que falta:</strong> probar la idea con usuarios, mejorar el tallaje y conectar marcas reales.</div>
+    </section>
+
+    <!-- BLOQUE 3. PERFIL: Captura y guarda medidas en este navegador -->
+    <section id="perfil" hidden>
+      <h1>Mi perfil</h1>
+      <p class="subtitulo">Ingresa tus medidas en centímetros. Puedes usar datos inventados para la exposición.</p>
+      <div class="bloque">
+        <form id="formulario-perfil">
+          <div class="formulario">
+            <label class="campo">Pecho (cm)<input type="number" id="pecho" min="50" max="200" placeholder="Ejemplo: 100" required></label>
+            <label class="campo">Cintura (cm)<input type="number" id="cintura" min="50" max="200" placeholder="Ejemplo: 90" required></label>
+            <label class="campo">Cadera (cm)<input type="number" id="cadera" min="50" max="210" placeholder="Ejemplo: 105" required></label>
+            <label class="campo">Estilo preferido
+              <select id="estilo-perfil"><option value="Casual">Casual</option><option value="Formal">Formal</option><option value="Urbano">Urbano</option><option value="Deportivo">Deportivo</option></select>
+            </label>
+          </div>
+          <div class="acciones"><button class="boton" type="submit">Guardar medidas</button><button class="boton secundario" type="button" id="poner-ejemplo">Usar datos de ejemplo</button><button class="boton secundario" type="button" id="borrar-perfil">Borrar</button></div>
+          <div class="mensaje" id="mensaje-perfil" role="status" aria-live="polite"></div>
+        </form>
+        <div class="aviso">Tus datos se guardan únicamente en este navegador, mediante <strong>localStorage</strong>. No hay cuentas de usuario ni base de datos.</div>
+      </div>
+    </section>
+
+    <!-- BLOQUE 4. EXPLORAR: Catálogo ficticio y sugerencia de talla -->
+    <section id="explorar" hidden>
+      <h1>Explorar prendas</h1>
+      <p class="subtitulo">Catálogo de ejemplo para explicar la idea de A Mi Medida.</p>
+      <div class="filtros">
+        <label class="campo">Buscar prendas<input id="buscar" type="search" placeholder="Ejemplo: camisa, jean, blazer"></label>
+        <label class="campo">Filtrar por estilo<select id="filtro-estilo"><option value="Todos">Todos</option><option>Casual</option><option>Formal</option><option>Urbano</option><option>Deportivo</option></select></label>
+      </div>
+      <p class="nota" id="estado-medidas" role="status"></p>
+      <div class="rejilla" id="productos"></div>
+      <p class="nota">* Tallas sugeridas mediante tablas simuladas. No garantizan ajuste, comodidad ni disponibilidad. No es una tienda ni permite compras.</p>
+    </section>
+
+    <footer>A Mi Medida · Avance académico · Productos, precios y tablas de tallas ficticios.</footer>
+  </main>
+
+  <script>
+    // BLOQUE 5. DATOS: ocho prendas ficticias para demostrar el concepto.
+    const prendas = [
+      {nombre:'Camiseta básica',categoria:'Camisetas',estilo:'Casual',precio:79900,icono:'👕',tipo:'arriba'},
+      {nombre:'Jean recto',categoria:'Pantalones',estilo:'Casual',precio:159900,icono:'👖',tipo:'abajo'},
+      {nombre:'Camisa formal',categoria:'Camisas',estilo:'Formal',precio:149900,icono:'👔',tipo:'arriba'},
+      {nombre:'Blazer clásico',categoria:'Chaquetas',estilo:'Formal',precio:289900,icono:'🧥',tipo:'arriba'},
+      {nombre:'Camiseta oversize',categoria:'Camisetas',estilo:'Urbano',precio:99900,icono:'👕',tipo:'arriba'},
+      {nombre:'Pantalón cargo',categoria:'Pantalones',estilo:'Urbano',precio:199900,icono:'👖',tipo:'abajo'},
+      {nombre:'Chaqueta deportiva',categoria:'Chaquetas',estilo:'Deportivo',precio:189900,icono:'🧥',tipo:'arriba'},
+      {nombre:'Jogger cómodo',categoria:'Pantalones',estilo:'Deportivo',precio:129900,icono:'👖',tipo:'abajo'}
+    ];
+
+    // BLOQUE 6. TALLAS: topes ficticios en centímetros para cada talla.
+    const tallas = [
+      {nombre:'S',pecho:94,cinturaArriba:86,cintura:80,cadera:98},
+      {nombre:'M',pecho:102,cinturaArriba:94,cintura:88,cadera:106},
+      {nombre:'L',pecho:110,cinturaArriba:102,cintura:98,cadera:116},
+      {nombre:'XL',pecho:120,cinturaArriba:112,cintura:108,cadera:126},
+      {nombre:'2XL',pecho:132,cinturaArriba:124,cintura:120,cadera:138},
+      {nombre:'3XL',pecho:146,cinturaArriba:138,cintura:134,cadera:152}
+    ];
+
+    const $ = selector => document.querySelector(selector);
+    const formatoDinero = numero => new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(numero);
+    let perfil = null;
+
+    // BLOQUE 7. ALMACENAMIENTO: leer perfil guardado (si existe).
+    try {
+      const guardado = JSON.parse(localStorage.getItem('amm-avance-perfil'));
+      if(guardado && typeof guardado === 'object' && !Array.isArray(guardado)) perfil = guardado;
+    } catch(error) { perfil = null; }
+
+    // BLOQUE 8. NAVEGACIÓN: mostrar solo la sección elegida.
+    function mostrar(vista) {
+      ['inicio','perfil','explorar'].forEach(nombre => {
+        $('#'+nombre).hidden = nombre !== vista;
+      });
+      document.querySelectorAll('[data-vista]').forEach(boton => {
+        const activo = boton.dataset.vista === vista && boton.closest('nav');
+        boton.classList.toggle('activo', !!activo);
+        if(boton.closest('nav')) {
+          if(activo) boton.setAttribute('aria-current','page');
+          else boton.removeAttribute('aria-current');
+        }
+      });
+      if(vista === 'explorar') mostrarPrendas();
+      window.scrollTo(0,0);
+    }
+
+    // BLOQUE 9. TALLAS: buscar la primera talla que admite las medidas.
+    function sugerirTalla(prenda) {
+      if(!perfil || !perfil.pecho || !perfil.cintura || !perfil.cadera) return 'Completa tu perfil';
+      const primera = tallas.find(t => prenda.tipo === 'abajo'
+        ? Number(perfil.cintura) <= t.cintura && Number(perfil.cadera) <= t.cadera
+        : Number(perfil.pecho) <= t.pecho && Number(perfil.cintura) <= t.cinturaArriba);
+      return primera ? 'Talla orientativa: '+primera.nombre : 'Sin talla en la tabla demo';
+    }
+
+    // BLOQUE 10. CATÁLOGO: filtrar por palabra y estilo, y crear tarjetas.
+    function mostrarPrendas() {
+      const texto = $('#buscar').value.trim().toLocaleLowerCase('es');
+      const estilo = $('#filtro-estilo').value;
+      const filtradas = prendas.filter(p =>
+        (p.nombre+' '+p.categoria).toLocaleLowerCase('es').includes(texto) &&
+        (estilo === 'Todos' || p.estilo === estilo)
+      );
+      $('#productos').innerHTML = '';
+      $('#estado-medidas').textContent = perfil
+        ? 'Perfil registrado. Puedes consultar tallas orientativas basadas en tus medidas.'
+        : 'Para ver una sugerencia de talla, primero guarda tus medidas en Mi perfil.';
+      if(filtradas.length === 0) {
+        const vacio = document.createElement('p');
+        vacio.className = 'vacio';
+        vacio.textContent = 'No hay prendas con esos filtros.';
+        $('#productos').appendChild(vacio);
+        return;
+      }
+      filtradas.forEach(p => {
+        const articulo = document.createElement('article');
+        articulo.className = 'tarjeta';
+        articulo.innerHTML =
+          '<div class="producto-emoji" aria-hidden="true">'+p.icono+'</div>'+
+          '<div><span class="categoria">'+p.categoria+' · '+p.estilo+'</span>'+
+          '<h3>'+p.nombre+'</h3>'+
+          '<p class="precio">'+formatoDinero(p.precio)+'</p>'+
+          '<span class="talla">'+sugerirTalla(p)+'</span></div>';
+        $('#productos').appendChild(articulo);
+      });
+    }
+
+    // BLOQUE 11. FORMULARIO: capturar, guardar y borrar datos del usuario.
+    function completarFormulario() {
+      if(!perfil) return;
+      $('#pecho').value = perfil.pecho || '';
+      $('#cintura').value = perfil.cintura || '';
+      $('#cadera').value = perfil.cadera || '';
+      $('#estilo-perfil').value = perfil.estilo || 'Casual';
+    }
+    $('#formulario-perfil').addEventListener('submit',evento => {
+      evento.preventDefault();
+      perfil = {
+        pecho:Number($('#pecho').value),
+        cintura:Number($('#cintura').value),
+        cadera:Number($('#cadera').value),
+        estilo:$('#estilo-perfil').value
+      };
+      try {
+        localStorage.setItem('amm-avance-perfil',JSON.stringify(perfil));
+        $('#mensaje-perfil').textContent = '¡Perfil guardado! Ya puedes explorar prendas.';
+      } catch(error) {
+        $('#mensaje-perfil').textContent = 'No se pudo guardar en este navegador.';
+      }
+    });
+    $('#poner-ejemplo').addEventListener('click',() => {
+      $('#pecho').value = 100;
+      $('#cintura').value = 90;
+      $('#cadera').value = 105;
+      $('#estilo-perfil').value = 'Casual';
+      $('#mensaje-perfil').textContent = 'Datos de ejemplo listos. Ahora pulsa Guardar medidas.';
+    });
+    $('#borrar-perfil').addEventListener('click',() => {
+      perfil = null;
+      $('#formulario-perfil').reset();
+      try { localStorage.removeItem('amm-avance-perfil'); } catch(error) {}
+      $('#mensaje-perfil').textContent = 'Perfil borrado de este navegador.';
+    });
+    document.querySelectorAll('[data-vista]').forEach(b => b.addEventListener('click',() => mostrar(b.dataset.vista)));
+    $('#buscar').addEventListener('input',mostrarPrendas);
+    $('#filtro-estilo').addEventListener('change',mostrarPrendas);
+    completarFormulario();
+    mostrar('inicio');
+  </script>
+</body>
+</html>
